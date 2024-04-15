@@ -9,11 +9,7 @@ interface Props {
 
 export const Button = ({ children, onClick, color = 'primary' }: Props) => {
   return (
-    <button
-      className={'btn btn-' + color}
-      onClick={onClick}
-      // data-bs-dismiss='alert'
-    >
+    <button className={'btn btn-' + color} onClick={onClick}>
       {children}
     </button>
   );

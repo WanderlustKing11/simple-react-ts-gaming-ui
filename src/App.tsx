@@ -8,12 +8,12 @@ function App() {
   return (
     <div className='text-center'>
       <div className='container mt-4'></div>
-      <Button color='primary' onClick={() => setLiveAlert(true)}>
+      <Button color='primary' onClick={() => setLiveAlert(!liveAlert)}>
         Click Me
       </Button>
       <div className='container mb-4'></div>
       {liveAlert && (
-        <Alert onClose={() => setLiveAlert(false)}>
+        <Alert color='success' onClose={() => setLiveAlert(false)}>
           Success! You triggered an alert!
         </Alert>
       )}

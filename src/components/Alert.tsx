@@ -3,12 +3,13 @@ import { ReactNode, useState, MouseEvent } from 'react';
 interface Props {
   children: ReactNode;
   onClose: () => void;
+  color: 'primary' | 'success' | 'danger' | 'warning';
 }
 
-export const Alert = ({ children, onClose }: Props) => {
+export const Alert = ({ children, onClose, color }: Props) => {
   return (
     <div
-      className={'alert alert-success alert-dismissible fade show'}
+      className={`alert alert-${color} alert-dismissible fade show`}
       role='alert'
     >
       {children}
