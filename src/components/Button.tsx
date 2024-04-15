@@ -1,9 +1,10 @@
 // import { ReactNode } from 'react';
+import { Alert } from './Alert';
 
 interface Props {
   children: string;
   color?: 'primary' | 'secondary' | 'danger';
-  onClick: () => void;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button = ({ children, onClick, color = 'primary' }: Props) => {
@@ -11,7 +12,7 @@ export const Button = ({ children, onClick, color = 'primary' }: Props) => {
     <button
       className={'btn btn-' + color}
       onClick={onClick}
-      data-bs-dismiss='alert'
+      // data-bs-dismiss='alert'
     >
       {children}
     </button>

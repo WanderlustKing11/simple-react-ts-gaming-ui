@@ -1,11 +1,22 @@
 import { Button } from './components/Button';
+import { Alert } from './components/Alert';
+import { useState } from 'react';
 
 function App() {
+  let [liveAlert, setLiveAlert] = useState(false);
+
   return (
-    <div>
-      <Button color='primary' onClick={() => console.log('Clicked')}>
-        My Button
+    <div className='text-center'>
+      <div className='container mt-4'></div>
+      <Button color='primary' onClick={() => setLiveAlert(true)}>
+        Click Me
       </Button>
+      <div className='container mb-4'></div>
+      {liveAlert && (
+        <Alert onClose={() => setLiveAlert(false)}>
+          Success! You triggered an alert!
+        </Alert>
+      )}
     </div>
   );
 }
